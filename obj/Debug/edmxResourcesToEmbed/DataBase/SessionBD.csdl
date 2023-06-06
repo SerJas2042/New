@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Session1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AccessToStatus">
+    <Key>
+      <PropertyRef Name="ID_access" />
+    </Key>
+    <Property Name="ID_access" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Accounts" Relationship="Self.FK_Accounts_AccessToStatus" FromRole="AccessToStatus" ToRole="Accounts" />
+  </EntityType>
+  <EntityType Name="Accounts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ID_access" Type="Int32" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AccessToStatus" Relationship="Self.FK_Accounts_AccessToStatus" FromRole="Accounts" ToRole="AccessToStatus" />
+    <NavigationProperty Name="Workers" Relationship="Self.FK_Workers_Accounts" FromRole="Accounts" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="LogTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Workers" Relationship="Self.FK_Workers_LogTypes" FromRole="LogTypes" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Workers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastDay" Type="DateTime" Precision="0" />
+    <Property Name="LastTime" Type="Time" Precision="7" />
+    <Property Name="LogType" Type="Int32" />
+    <NavigationProperty Name="Accounts" Relationship="Self.FK_Workers_Accounts" FromRole="Workers" ToRole="Accounts" />
+    <NavigationProperty Name="LogTypes" Relationship="Self.FK_Workers_LogTypes" FromRole="Workers" ToRole="LogTypes" />
+  </EntityType>
+  <Association Name="FK_Accounts_AccessToStatus">
+    <End Role="AccessToStatus" Type="Self.AccessToStatus" Multiplicity="0..1" />
+    <End Role="Accounts" Type="Self.Accounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccessToStatus">
+        <PropertyRef Name="ID_access" />
+      </Principal>
+      <Dependent Role="Accounts">
+        <PropertyRef Name="ID_access" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Workers_Accounts">
+    <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+    <End Role="Workers" Type="Self.Workers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Accounts">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Workers">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Workers_LogTypes">
+    <End Role="LogTypes" Type="Self.LogTypes" Multiplicity="0..1" />
+    <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LogTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Workers">
+        <PropertyRef Name="LogType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Session1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AccessToStatus" EntityType="Self.AccessToStatus" />
+    <EntitySet Name="Accounts" EntityType="Self.Accounts" />
+    <EntitySet Name="LogTypes" EntityType="Self.LogTypes" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Workers" EntityType="Self.Workers" />
+    <AssociationSet Name="FK_Accounts_AccessToStatus" Association="Self.FK_Accounts_AccessToStatus">
+      <End Role="AccessToStatus" EntitySet="AccessToStatus" />
+      <End Role="Accounts" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Workers_Accounts" Association="Self.FK_Workers_Accounts">
+      <End Role="Accounts" EntitySet="Accounts" />
+      <End Role="Workers" EntitySet="Workers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Workers_LogTypes" Association="Self.FK_Workers_LogTypes">
+      <End Role="LogTypes" EntitySet="LogTypes" />
+      <End Role="Workers" EntitySet="Workers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

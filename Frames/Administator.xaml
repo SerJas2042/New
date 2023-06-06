@@ -1,0 +1,111 @@
+﻿<Page x:Class="Session_1.Frames.Administator"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Session_1.Frames"
+      xmlns:DC="clr-namespace:Session_1.DataBase"
+      xmlns:classes="clr-namespace:Session_1.Classes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page1"
+      Background="White" IsVisibleChanged="Page_IsVisibleChanged">
+    <Page.Resources>
+        <DC:Books x:Key="Books"></DC:Books>
+    </Page.Resources>
+    <Grid>
+        <DockPanel>
+
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Left" MinWidth="140">
+                
+                <Border BorderBrush="Black" BorderThickness="1">
+                    <StackPanel Orientation="Vertical" MinWidth="70" HorizontalAlignment="Left">
+
+                        <DataGrid Name="UserData" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Имя" MinWidth="60" Binding="{Binding Path=Name}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Фамилия" MinWidth="60" Binding="{Binding Path=Second_Name}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Отчество" MinWidth="60" Binding="{Binding Path=Fird_Name}"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        
+                        <Border BorderBrush="Black" BorderThickness="1" MinHeight="50" MinWidth="50">
+                            <Image x:Name="WorkerFace" Loaded="WorkerFace_Loaded"></Image>
+                        </Border>
+                    </StackPanel>
+                </Border>
+                
+            </StackPanel>
+            
+
+            <Border  BorderBrush="Black" BorderThickness="1" DockPanel.Dock="Top">
+                <StackPanel Orientation="Horizontal" MinHeight="40" VerticalAlignment="Top">
+
+                    <Border BorderBrush="Black" BorderThickness="1" Margin="5 0 5 0">
+                        <TextBlock  TextAlignment="Center" MinWidth="60">Menu</TextBlock>
+                    </Border>
+
+
+                    <Button x:Name="OpenData" Style="{StaticResource Buttons1}" Click="OpenData_Click">Таблица книг</Button>
+                    <Button Style="{StaticResource Buttons1}">Таблица выставок</Button>
+                    <Button Style="{StaticResource Buttons1}">Редактировать таблицу</Button>
+                    <Button Style="{StaticResource Buttons1}">Удалить таблицу</Button>
+                    
+                </StackPanel>
+            </Border>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition MaxHeight="60"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0">
+                    <DataGrid Name="OpenTable" AutoGenerateColumns="False">
+                         
+                        
+                        
+                        <DataGrid.Columns>
+
+                            <DataGridTextColumn Header="ID" IsReadOnly="False" Binding="{Binding ID}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Название" IsReadOnly="False" Binding="{Binding Name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Дата Написания" IsReadOnly="False" Binding="{Binding DateOfWrite}"></DataGridTextColumn>
+
+                            <DataGridTemplateColumn Header="Редактировать" Width="auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="ButtonUpdate" Margin="2" Background="Orange" FontStyle="Normal" Click="ButtonUpdate_Click">Редактировать</Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            
+                        </DataGrid.Columns>
+                        
+                    </DataGrid>
+                </Border>
+
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1">
+                    
+                    <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
+
+                        <Button x:Name="ButtonSave" Style="{StaticResource Buttons1}" MinHeight="40" MinWidth="100" Click="ButtonSave_Click" >Добавить</Button>
+                     
+                        <Button x:Name="ButtonDelete" Style="{StaticResource Buttons1}" MinHeight="40" MinWidth="100" Click="ButtonDelete_Click" >Удалить</Button>
+                        
+                    </StackPanel>
+                    
+                </Border>
+                
+                
+            </Grid>
+            
+            
+            
+            
+            
+
+        </DockPanel>
+    </Grid>
+    
+    
+</Page>

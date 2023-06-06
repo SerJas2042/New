@@ -1,0 +1,45 @@
+C:\Users\serzh\source\repos\Session 1\bin\Debug\Session 1.exe.config
+C:\Users\serzh\source\repos\Session 1\bin\Debug\Session 1.exe
+C:\Users\serzh\source\repos\Session 1\bin\Debug\Session 1.pdb
+C:\Users\serzh\source\repos\Session 1\bin\Debug\EntityFramework.dll
+C:\Users\serzh\source\repos\Session 1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\serzh\source\repos\Session 1\bin\Debug\EntityFramework.xml
+C:\Users\serzh\source\repos\Session 1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\serzh\source\repos\Session 1\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Frames\Administator.g.cs
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Frames\Avtorisation.g.cs
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Windows\MainWindow.g.cs
+C:\Users\serzh\source\repos\Session 1\obj\Debug\App.g.cs
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Session 1_Content.g.cs
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Session 1_MarkupCompile.cache
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Session 1_MarkupCompile.lref
+C:\Users\serzh\source\repos\Session 1\obj\Debug\App.baml
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Frames\Administator.baml
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Frames\Avtorisation.baml
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Windows\MainWindow.baml
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Session 1.g.resources
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Session_1.Properties.Resources.resources
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Session 1.csproj.GenerateResource.cache
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Session 1.csproj.CoreCompileInputs.cache
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Session 1.csproj.CopyComplete
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Session 1.exe
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Session 1.pdb
+C:\Users\serzh\source\repos\Session 1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Frames\Add.g.cs
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Frames\Add.baml
+E:\Проект для музея\Проект\Session 1\obj\Debug\Session 1.csprojAssemblyReference.cache
+E:\Проект для музея\Проект\Session 1\obj\Debug\Frames\Add.g.cs
+E:\Проект для музея\Проект\Session 1\obj\Debug\Frames\Administator.g.cs
+E:\Проект для музея\Проект\Session 1\obj\Debug\Frames\Avtorisation.g.cs
+E:\Проект для музея\Проект\Session 1\obj\Debug\Frames\Welcome.g.cs
+E:\Проект для музея\Проект\Session 1\obj\Debug\Windows\MainWindow.g.cs
+E:\Проект для музея\Проект\Session 1\obj\Debug\App.g.cs
+E:\Проект для музея\Проект\Session 1\obj\Debug\Session 1_Content.g.cs
+E:\Проект для музея\Проект\Session 1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Проект для музея\Проект\Session 1\obj\Debug\Session 1_MarkupCompile.cache
+E:\Проект для музея\Проект\Session 1\obj\Debug\Session 1_MarkupCompile.lref
+E:\Проект для музея\Проект\Session 1\obj\Debug\Session 1.exe
+E:\Проект для музея\Проект\Session 1\obj\Debug\Session 1.pdb
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Frames\Welcome.g.cs
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Frames\Welcome.baml
+C:\Users\serzh\source\repos\Session 1\obj\Debug\Session 1.csprojAssemblyReference.cache
